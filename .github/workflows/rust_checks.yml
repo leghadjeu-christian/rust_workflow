@@ -1,4 +1,6 @@
 name: Unit tests, linting, and formatting
+
+permissions: {}
 on: [push]
 jobs:
   checks:
