@@ -11,10 +11,10 @@ jobs:
           rustup update stable
       - name: Run cargo build
         id: run_tests
-        run: cargo build >> $GITHUB_OUTPUT 
+        run: cargo run >> $GITHUB_OUTPUT 
       - name: Lint
         run: cargo clippy
       - name: Check formatting
         run: cargo fmt --check
       - name: Check for hello, world
-        run: if [ ${{join(steps.run_tests.outputs.*, '\n')}} == $GITHUB_OUTPUT ]
+        run: if [ ${{join(steps.run_tests.outputs.*, '\n')}} == "$GITHUB_OUTPUT" ] then echo "pass"
