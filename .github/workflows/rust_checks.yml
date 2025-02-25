@@ -1,6 +1,4 @@
 name: Unit tests, linting, and formatting
-
-permissions: {}
 on: [push]
 jobs:
   checks:
@@ -11,14 +9,8 @@ jobs:
         run: |
           rustup override set stable
           rustup update stable
-      - name: Run cargo build
-        id: run_tests
-        run: |
-         ls -l 
-      - name: Run cargo build
-        run: |
-         cargo build
-         ./target/debug/rust_workflow
+      - name: Run tests
+        run: cargo test
       - name: Lint
         run: cargo clippy
       - name: Check formatting
