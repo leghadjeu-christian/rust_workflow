@@ -12,8 +12,7 @@ jobs:
       - name: Run cargo build
         id: run_tests
         run: |
-          cargo build
-          ./target/debug/rust_workflow >> $GITHUB_OUTPUT
+          cargo run
       - name: Lint
         run: cargo clippy
       - name: Check formatting
