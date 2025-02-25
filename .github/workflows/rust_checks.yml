@@ -11,7 +11,7 @@ jobs:
           rustup update stable
       - name: Run cargo build
         id: run_tests
-        run: cargo run >> $GITHUB_OUTPUT 
+        run: cargo run 
       - name: Lint
         run: cargo clippy
       - name: Check formatting
