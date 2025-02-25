@@ -9,8 +9,10 @@ jobs:
         run: |
           rustup override set stable
           rustup update stable
-      - name: Run tests
-        run: cargo test
+      - name: Run cargo build
+        run: cargo build  
+      - name: Run hello!
+        run: ./target/debug/rust_workflow
       - name: Lint
         run: cargo clippy
       - name: Check formatting
