@@ -3,6 +3,7 @@ use std::fs::write;
 use std::process::exit;
 
 fn main() {
+    println!("Hello, world!");
     let github_output_path = env::var("GITHUB_OUTPUT").unwrap();
 
     let args: Vec<String> = env::args().collect();
