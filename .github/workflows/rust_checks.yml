@@ -11,8 +11,6 @@ jobs:
           rustup update stable
       - name: Run cargo build
         run: cargo build  
-      - name: Run hello!
-        run: ./target/debug/rust_workflow
       - name: Lint
         run: cargo clippy
       - name: Check formatting
