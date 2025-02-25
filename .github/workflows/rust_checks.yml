@@ -18,7 +18,7 @@ jobs:
       - name: Run cargo build
         run: |
          cargo build
-         ls -l target/debug/
+         ./target/debug/rust_workflow
       - name: Lint
         run: cargo clippy
       - name: Check formatting
