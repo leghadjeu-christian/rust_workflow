@@ -18,7 +18,7 @@ jobs:
       - name: Run cargo build
         run: |
          cargo build
-         ls -l target/
+         ls -l target/debug/
       - name: Lint
         run: cargo clippy
       - name: Check formatting
