@@ -23,7 +23,7 @@ RUN cargo build --release
 FROM gcr.io/distroless/cc AS runtime
 
 # copy the build artifact from the build stage
-COPY --from=build /sample-rust-action/target/release/rust_workflow .
+COPY --from=build /rust_workflow/target/release/rust_workflow .
 
 # set the startup command to run your binary
 ENTRYPOINT ["/rust_workflow"]
