@@ -8,7 +8,7 @@ WORKDIR /rust_workflow
 COPY ./Cargo.lock ./Cargo.lock
 COPY ./Cargo.toml ./Cargo.toml
 
-# this build step will cache your dependencies
+# this build step will cache your dependencie
 RUN cargo build --release
 RUN rm src/*.rs
 
