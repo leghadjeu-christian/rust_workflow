@@ -16,7 +16,7 @@ RUN rm src/*.rs
 COPY ./src ./src
 
 # build for release
-RUN rm ./target/release/deps/rust_workflow
+RUN rm ./target/release/rust_workflow
 RUN cargo build --release
 
 # our final base
