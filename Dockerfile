@@ -1,8 +1,8 @@
 FROM rust:1.67 as build
 
 # create a new empty shell project
-RUN USER=root cargo new --bin sample-rust-action
-WORKDIR /sample-rust-action
+RUN USER=root cargo new --bin rust_workflow
+WORKDIR /rust_workflow
 
 # copy over your manifests
 COPY ./Cargo.lock ./Cargo.lock
@@ -16,14 +16,14 @@ RUN rm src/*.rs
 COPY ./src ./src
 
 # build for release
-RUN rm ./target/release/deps/sample_rust_action*
+RUN rm ./target/release/deps/rust_workflow
 RUN cargo build --release
 
 # our final base
 FROM gcr.io/distroless/cc AS runtime
 
 # copy the build artifact from the build stage
-COPY --from=build /sample-rust-action/target/release/sample-rust-action .
+COPY --from=build /sample-rust-action/target/release/rust_workflow .
 
 # set the startup command to run your binary
-ENTRYPOINT ["/sample-rust-action"]
+ENTRYPOINT ["/rust_workflow"]
